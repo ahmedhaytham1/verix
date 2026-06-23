@@ -402,7 +402,7 @@ function projectDescription(locale: Locale, project: BaseProject) {
       fr: 'Un projet de waqf aux exigences multiples, illustrant la capacité de Verix à structurer les données techniques en livrables clairs et validables.'
     },
     sabbagh: {
-      ar: 'مشروع ضمن محفظة الأعمال الخاصة يتطلب معالجة هندسية متوازنة بين المتطلبات التصميمية، الجدوى الفنية، وجودة المخرجات النهائية.',
+      ar: 'مشروع أعمال خاصة يتطلب معالجة هندسية متوازنة بين المتطلبات التصميمية، الجدوى الفنية، وجودة المخرجات النهائية.',
       en: 'A private portfolio project requiring balanced engineering treatment across design requirements, technical feasibility and final deliverable quality.',
       fr: 'Un projet privé nécessitant un équilibre entre exigences de conception, faisabilité technique et qualité des livrables finaux.'
     },

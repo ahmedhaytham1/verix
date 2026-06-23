@@ -33,15 +33,15 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         <div>
           <p className="text-sm font-semibold uppercase tracking-luxe text-gold">{dict.nav.contact}</p>
           <div className="mt-5 grid gap-4 text-muted/80">
-            <p className="flex items-center gap-3"><Phone className="h-4 w-4 text-gold" /> {company.phone}</p>
-            <p className="flex items-center gap-3"><Mail className="h-4 w-4 text-gold" /> {company.email}</p>
+            <p className="flex items-center gap-3"><Phone className="h-4 w-4 text-gold" /> <bdi dir="ltr" className="font-medium tracking-wide">{company.phone}</bdi></p>
+            <p className="flex items-center gap-3"><Mail className="h-4 w-4 text-gold" /> <bdi dir="ltr">{company.email}</bdi></p>
             <p className="flex items-center gap-3"><MapPin className="h-4 w-4 text-gold" /> {company.address[locale]}</p>
           </div>
         </div>
       </div>
       <div className="container-luxury mt-12 flex flex-col gap-4 border-t border-line/15 pt-6 text-sm text-muted/60 md:flex-row md:items-center md:justify-between">
         <p>© 2026 {company.name}. {locale === 'ar' ? 'جميع الحقوق محفوظة.' : locale === 'fr' ? 'Tous droits réservés.' : 'All rights reserved.'}</p>
-        <p>{company.website}</p>
+        <p><bdi dir="ltr">{company.website}</bdi></p>
       </div>
     </footer>
   );

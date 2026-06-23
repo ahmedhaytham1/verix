@@ -151,7 +151,8 @@ function Field({
         name={name}
         autoComplete={autoComplete}
         inputMode={inputMode}
-        className="w-full rounded-full border border-line/15 bg-bg/70 px-5 py-4 outline-none transition placeholder:text-muted/50 focus:border-gold/60"
+        dir={inputMode === 'tel' ? 'ltr' : undefined}
+        className={`w-full rounded-full border border-line/15 bg-bg/70 px-5 py-4 outline-none transition placeholder:text-muted/50 focus:border-gold/60 ${inputMode === 'tel' ? 'text-left tracking-wide' : ''}`}
       />
     </label>
   );

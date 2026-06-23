@@ -482,3 +482,72 @@ html[dir='rtl'] .architectural-frame::after,
     width: min(100% - 24px, 1180px);
   }
 }
+
+
+/* ------------------------------
+   Arabic + phone direction final fixes
+------------------------------ */
+html[dir='rtl'],
+[dir='rtl'] {
+  text-rendering: geometricPrecision;
+}
+
+html[dir='rtl'] h1,
+html[dir='rtl'] h2,
+html[dir='rtl'] h3,
+html[dir='rtl'] p,
+html[dir='rtl'] a,
+html[dir='rtl'] button,
+html[dir='rtl'] span,
+[dir='rtl'] h1,
+[dir='rtl'] h2,
+[dir='rtl'] h3,
+[dir='rtl'] p,
+[dir='rtl'] a,
+[dir='rtl'] button,
+[dir='rtl'] span {
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.45;
+}
+
+html[dir='rtl'] .u-title-line,
+[dir='rtl'] .u-title-line {
+  overflow: visible !important;
+  padding-block: .04em;
+}
+
+html[dir='rtl'] .u-title-line > span,
+[dir='rtl'] .u-title-line > span {
+  line-height: 1.12;
+}
+
+bdi[dir='ltr'],
+[dir='ltr'] bdi,
+.ltr-value {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+@media (max-width: 767px) {
+  html[dir='rtl'] .u-title-line,
+  [dir='rtl'] .u-title-line {
+    line-height: 1.16 !important;
+  }
+
+  html[dir='rtl'] .u-copy,
+  [dir='rtl'] .u-copy {
+    line-height: 2.05 !important;
+    overflow-wrap: normal;
+  }
+
+  html[dir='rtl'] .mobile-menu-panel a,
+  [dir='rtl'] .mobile-menu-panel a {
+    line-height: 1.7;
+  }
+
+  html[dir='rtl'] .gold-line::after,
+  [dir='rtl'] .gold-line::after {
+    flex: 0 0 48px;
+  }
+}
