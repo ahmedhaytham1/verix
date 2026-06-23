@@ -30,10 +30,10 @@ export function UltimateHome({ locale, dict, projects }: { locale: Locale; dict:
     permits: isArabic ? 'اعتمادات وخدمات هندسية متكاملة' : locale === 'fr' ? 'Accréditations et services d’ingénierie intégrés' : 'Accreditations and integrated engineering services',
     portfolio: isArabic ? 'محفظة مشاريع مختارة' : locale === 'fr' ? 'Portefeuille de projets sélectionnés' : 'Selected Project Portfolio',
     portfolioLead: isArabic
-      ? 'تم إعداد العرض البصري ليمنح العميل قراءة سريعة وواضحة لنطاق خبرات Verix، مع إبراز المشاريع كدراسات حالة قابلة للتصفح.'
+      ? 'تعرض هذه المحفظة نماذج مختارة من أعمال Verix في قطاعات متنوعة، بما يوضح نطاق الخبرات الهندسية وقدرة الفريق على التعامل مع متطلبات المشاريع المختلفة.'
       : locale === 'fr'
-        ? 'La présentation visuelle permet une lecture claire de l’expertise de Verix, avec des projets présentés comme des études de cas faciles à consulter.'
-        : 'The visual presentation gives clients a clear reading of Verix expertise, with projects presented as browsable case studies.',
+        ? 'Ce portefeuille présente une sélection de projets Verix dans plusieurs secteurs, mettant en valeur l’étendue de l’expertise et la capacité de l’équipe à répondre à différentes exigences.'
+        : 'This portfolio presents selected Verix projects across multiple sectors, highlighting the company’s engineering scope and ability to respond to different project requirements.',
     servicesIntro: isArabic
       ? 'من المساحة ورخص البناء إلى الإشراف والدفاع المدني، تقدم Verix مخرجات هندسية واضحة تساعد العميل على اتخاذ القرار الصحيح.'
       : locale === 'fr'
@@ -43,32 +43,32 @@ export function UltimateHome({ locale, dict, projects }: { locale: Locale; dict:
 
   return (
     <>
-      <section className="ultimate-hero relative isolate min-h-screen overflow-hidden pb-20 pt-32 md:pt-40">
+      <section className="ultimate-hero relative isolate min-h-screen overflow-hidden pb-14 pt-24 md:pb-20 md:pt-40">
         <EngineeringField />
         <div className="hero-aura" aria-hidden="true" />
-        <div className="container-luxury relative z-10 grid min-h-[720px] gap-12 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
+        <div className="container-luxury relative z-10 grid min-h-[auto] gap-10 lg:min-h-[720px] lg:grid-cols-[1.05fr_.95fr] lg:items-center">
           <div>
-            <p className="u-hero-eyebrow gold-line text-xs font-bold uppercase tracking-luxe text-gold">{dict.home.eyebrow}</p>
-            <h1 className="mt-8 text-balance text-5xl font-semibold leading-[1.04] text-text md:text-7xl xl:text-[6.6rem]">
+            <p className={`u-hero-eyebrow gold-line font-bold text-gold ${isArabic ? "text-sm tracking-normal" : "text-xs uppercase tracking-luxe"}`}>{dict.home.eyebrow}</p>
+            <h1 className="mt-6 text-balance text-[3.05rem] font-semibold leading-[1.08] text-text sm:text-6xl md:mt-8 md:text-7xl xl:text-[6.6rem]">
               {lines.map((line) => (
                 <span key={line} className="u-title-line block overflow-hidden">
                   <span className="block">{line}</span>
                 </span>
               ))}
             </h1>
-            <p className="u-copy mt-7 max-w-3xl text-lg leading-9 text-muted/90 md:text-2xl md:leading-10">{dict.home.description}</p>
+            <p className="u-copy mt-6 max-w-3xl text-base leading-8 text-muted/90 sm:text-lg md:mt-7 md:text-2xl md:leading-10">{dict.home.description}</p>
 
-            <div className="u-copy mt-9 flex flex-col gap-4 sm:flex-row">
-              <Link href={localizePath(locale, '/projects')} className="luxury-button bg-gold text-bg hover:shadow-gold">
+            <div className="u-copy mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row">
+              <Link href={localizePath(locale, '/projects')} className="luxury-button w-full bg-gold text-bg hover:shadow-gold sm:w-auto">
                 {labels.viewProjects}
                 <Arrow className="h-4 w-4" />
               </Link>
-              <Link href={localizePath(locale, '/contact')} className="luxury-button border border-line/25 text-text hover:border-gold/60 hover:text-gold">
+              <Link href={localizePath(locale, '/contact')} className="luxury-button w-full border border-line/25 text-text hover:border-gold/60 hover:text-gold sm:w-auto">
                 {labels.directContact}
               </Link>
             </div>
 
-            <div className="mt-11 grid gap-3 md:grid-cols-3">
+            <div className="mt-10 hidden gap-3 md:grid md:grid-cols-3">
               {dict.home.trust.map((item) => (
                 <div key={item} className="u-stat rounded-2xl border border-line/15 bg-text/[.045] p-4 text-sm leading-7 text-muted/80">
                   <CheckCircle2 className="mb-4 h-5 w-5 text-gold" />
@@ -78,7 +78,7 @@ export function UltimateHome({ locale, dict, projects }: { locale: Locale; dict:
             </div>
           </div>
 
-          <div className="u-frame architectural-frame relative">
+          <div className="u-frame architectural-frame relative hidden lg:block">
             <div className="architectural-frame__media relative overflow-hidden rounded-[2rem] border border-line/15 bg-paper shadow-luxury">
               <Image
                 src="/images/ui/hero-architecture.svg"
@@ -101,7 +101,7 @@ export function UltimateHome({ locale, dict, projects }: { locale: Locale; dict:
           </div>
         </div>
 
-        <div className="container-luxury relative z-10 mt-12 flex items-center justify-center text-muted/70">
+        <div className="container-luxury relative z-10 mt-8 hidden items-center justify-center text-muted/70 md:flex">
           <span className="flex items-center gap-3 text-xs font-semibold uppercase tracking-luxe">
             {dict.common.scroll}
             <ArrowDown className="h-4 w-4 animate-bounce text-gold" />

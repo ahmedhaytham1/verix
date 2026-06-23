@@ -381,3 +381,104 @@ html[dir='rtl'] .architectural-frame::after,
   .architectural-frame__media img { height: 19rem !important; }
   .project-teaser img, .project-teaser:first-child img { height: 14rem !important; }
 }
+
+
+/* ------------------------------
+   Mobile final polish
+------------------------------ */
+@media (max-width: 767px) {
+  .container-luxury {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .mobile-header-container {
+    width: min(100% - 28px, 1180px);
+  }
+
+  body.mobile-menu-open {
+    overflow: hidden;
+  }
+
+  .mobile-menu-panel {
+    direction: inherit;
+  }
+
+  .glass-panel {
+    backdrop-filter: blur(16px);
+  }
+
+  .gold-line::after {
+    width: 48px;
+    margin-inline-start: 12px;
+  }
+
+  .engineering-field {
+    opacity: .55;
+  }
+
+  .engineering-field::before {
+    background-size: 46px 46px;
+  }
+
+  .engineering-field::after {
+    width: 95vmax;
+    height: 95vmax;
+    top: -42vmax;
+    inset-inline-end: -32vmax;
+    opacity: .55;
+  }
+
+  .drafting-line {
+    display: none;
+  }
+
+  .luxury-button {
+    min-height: 56px;
+    padding: 1rem 1.15rem;
+    font-size: 1rem;
+  }
+
+  .u-title-line {
+    text-align: center;
+  }
+
+  .u-hero-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .u-copy {
+    text-align: center;
+  }
+
+  .hero-aura {
+    width: 24rem;
+    height: 24rem;
+    inset: 4rem -9rem auto auto;
+    opacity: .45;
+  }
+
+  .ultimate-hero {
+    min-height: auto;
+  }
+
+  .project-teaser img {
+    height: 260px !important;
+  }
+
+  .whatsapp-safe-spacer {
+    height: 5rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .u-title-line {
+    font-size: 2.72rem;
+  }
+
+  .container-luxury {
+    width: min(100% - 24px, 1180px);
+  }
+}

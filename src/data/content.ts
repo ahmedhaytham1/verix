@@ -135,7 +135,7 @@ const ar = {
     service: 'الخدمة المطلوبة',
     message: 'تفاصيل المشروع',
     submit: 'إرسال الطلب',
-    note: 'يرجى تعبئة البيانات، وسيقوم فريق Verix بمراجعة الطلب والتواصل معكم في أقرب وقت.'
+    note: 'عند إرسال الطلب سيتم فتح واتساب تلقائياً مع بياناتكم ورسالة المشروع لمراجعتها من فريق Verix.'
   },
   values: [
     { title: 'الدقة', description: 'نؤمن أن التفاصيل الهندسية الصغيرة تصنع فرقاً كبيراً في جودة القرار ونجاح المشروع.' },
@@ -237,7 +237,7 @@ const en = {
     service: 'Required Service',
     message: 'Project Details',
     submit: 'Submit Request',
-    note: 'Please share your details and the Verix team will review your request and contact you shortly.'
+    note: 'When you submit the request, WhatsApp will open automatically with your details and project message ready to send to the Verix team.'
   },
   values: [
     { title: 'Precision', description: 'Small engineering details make a major difference in decision quality and project success.' },
@@ -326,7 +326,7 @@ const fr = {
     service: 'Service demandé',
     message: 'Détails du projet',
     submit: 'Envoyer la demande',
-    note: 'Veuillez renseigner vos informations ; l’équipe Verix étudiera votre demande et vous contactera dans les meilleurs délais.'
+    note: 'Après l’envoi, WhatsApp s’ouvrira automatiquement avec vos informations et votre message prêts à être envoyés à l’équipe Verix.'
   },
   values: [
     { title: 'Précision', description: 'Les petits détails d’ingénierie font une grande différence dans la qualité de la décision et la réussite du projet.' },

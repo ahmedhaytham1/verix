@@ -74,20 +74,6 @@ export function GsapEffects() {
           scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: 0.7 }
         });
       });
-
-      gsap.utils.toArray<HTMLElement>('[data-count]').forEach((el) => {
-        const value = Number(el.dataset.count || '0');
-        const obj = { val: 0 };
-        gsap.to(obj, {
-          val: value,
-          duration: 1.6,
-          ease: 'power2.out',
-          scrollTrigger: { trigger: el, start: 'top 88%', once: true },
-          onStart: () => { el.textContent = '0'; },
-          onUpdate: () => { el.textContent = Math.round(obj.val).toString(); },
-          onComplete: () => { el.textContent = value.toString(); }
-        });
-      });
     });
 
     return () => ctx.revert();

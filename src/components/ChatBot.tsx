@@ -59,7 +59,7 @@ export function ChatBot({ locale, dict }: { locale: Locale; dict: Dictionary }) 
   }
 
   return (
-    <div className="fixed bottom-6 start-6 z-50">
+    <div className="fixed bottom-6 start-6 z-50 hidden md:block">
       {open && (
         <div className="mb-4 w-[min(360px,calc(100vw-40px))] overflow-hidden rounded-[2rem] border border-line/15 bg-bg/95 shadow-luxury backdrop-blur-xl">
           <div className="flex items-center justify-between border-b border-line/15 p-4">

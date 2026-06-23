@@ -3,6 +3,7 @@ import { Clock, Mail, MapPin, Phone } from 'lucide-react';
 import { EngineeringField } from '@/components/EngineeringField';
 import { SectionHeading } from '@/components/SectionHeading';
 import { company, getDictionary } from '@/data/content';
+import { ContactForm } from '@/components/ContactForm';
 import type { Locale } from '@/lib/i18n';
 
 export default function ContactPage({ params }: { params: { locale: Locale } }) {
@@ -22,23 +23,7 @@ export default function ContactPage({ params }: { params: { locale: Locale } }) 
               <Info icon={<Clock className="h-5 w-5" />} title={params.locale === 'ar' ? 'ساعات العمل' : params.locale === 'fr' ? 'Horaires' : 'Working Hours'} value={company.hours[params.locale]} />
             </div>
           </div>
-
-          <form className="reveal rounded-[2.25rem] border border-line/15 bg-surface/70 p-8 shadow-luxury md:p-10">
-            <p className="text-sm font-bold uppercase tracking-luxe text-gold">{dict.contactPage.formTitle}</p>
-            <div className="mt-8 grid gap-5 md:grid-cols-2">
-              <Field label={dict.contactPage.name} />
-              <Field label={dict.contactPage.phone} />
-            </div>
-            <div className="mt-5">
-              <Field label={dict.contactPage.service} />
-            </div>
-            <label className="mt-5 block">
-              <span className="mb-2 block text-sm font-semibold text-muted/80">{dict.contactPage.message}</span>
-              <textarea rows={7} className="w-full rounded-3xl border border-line/15 bg-bg/70 px-5 py-4 outline-none transition placeholder:text-muted/50 focus:border-gold/60" />
-            </label>
-            <button type="button" className="luxury-button mt-6 bg-gold text-bg hover:shadow-gold">{dict.contactPage.submit}</button>
-            <p className="mt-5 text-sm leading-7 text-muted/60">{dict.contactPage.note}</p>
-          </form>
+          <ContactForm locale={params.locale} dict={dict} />
         </div>
       </div>
     </section>
@@ -57,11 +42,3 @@ function Info({ icon, title, value }: { icon: ReactNode; title: string; value: s
   );
 }
 
-function Field({ label }: { label: string }) {
-  return (
-    <label className="block">
-      <span className="mb-2 block text-sm font-semibold text-muted/80">{label}</span>
-      <input className="w-full rounded-full border border-line/15 bg-bg/70 px-5 py-4 outline-none transition placeholder:text-muted/50 focus:border-gold/60" />
-    </label>
-  );
-}
