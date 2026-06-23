@@ -89,9 +89,9 @@ const ar = {
     trust: ['مخرجات واضحة قابلة للاعتماد', 'دقة فنية في كل مرحلة', 'حلول عملية قابلة للتنفيذ'],
     metrics: [
       { value: 13, suffix: '+', label: 'خدمة هندسية متخصصة' },
-      { value: 20, suffix: '+', label: 'مشروع ضمن المحفظة' },
+      { value: 20, suffix: '+', label: 'مشروع موثق' },
       { value: 5, suffix: '', label: 'دول ضمن نطاق الحضور' },
-      { value: 2026, suffix: '', label: 'ملف تعريفي محدث' }
+      { value: 2026, suffix: '', label: 'تحديث محفظة الأعمال' }
     ],
     introTitle: 'هندسة تبدأ من قرار واضح',
     introText: 'نساعد العملاء على قراءة الواقع الفني للمشروع، تقليل المخاطر، وتحويل التحديات الهندسية إلى خطوات عملية قابلة للتنفيذ بثقة وكفاءة.',
@@ -123,7 +123,7 @@ const ar = {
   projectsPage: {
     eyebrow: 'أعمالنا',
     title: 'محفظة مشاريع مختارة',
-    lead: 'استعرض مجموعة مختارة من مشاريع Verix في قطاعات الضيافة، السكني، التجاري، البنية التحتية، ومحطات الوقود. تم تنظيم الصفحة كمعرض مشاريع واضح واحترافي لسهولة التصفح.'
+    lead: 'تضم محفظة Verix نماذج مختارة من مشاريع الضيافة، والمشاريع السكنية والتجارية، وأعمال البنية التحتية ومحطات الوقود، بما يعكس تنوع الخبرات الهندسية وجودة المخرجات.'
   },
   contactPage: {
     eyebrow: 'تواصل معنا',
@@ -135,7 +135,7 @@ const ar = {
     service: 'الخدمة المطلوبة',
     message: 'تفاصيل المشروع',
     submit: 'إرسال الطلب',
-    note: 'عند إرسال الطلب سيتم فتح واتساب تلقائياً مع بياناتكم ورسالة المشروع لمراجعتها من فريق Verix.'
+    note: 'سيتم إرسال بيانات الطلب عبر واتساب مباشرة إلى فريق Verix لمراجعتها والتواصل معكم في أقرب وقت.'
   },
   values: [
     { title: 'الدقة', description: 'نؤمن أن التفاصيل الهندسية الصغيرة تصنع فرقاً كبيراً في جودة القرار ونجاح المشروع.' },
@@ -191,9 +191,9 @@ const en = {
     trust: ['Clear outputs ready for approval', 'Technical precision at every stage', 'Practical solutions ready for execution'],
     metrics: [
       { value: 13, suffix: '+', label: 'Specialized engineering services' },
-      { value: 20, suffix: '+', label: 'Projects in the portfolio' },
+      { value: 20, suffix: '+', label: 'Documented projects' },
       { value: 5, suffix: '', label: 'Countries of presence' },
-      { value: 2026, suffix: '', label: 'Updated company profile' }
+      { value: 2026, suffix: '', label: 'Portfolio update' }
     ],
     introTitle: 'Engineering begins with a clear decision',
     introText: 'We help clients understand the technical reality of each project, reduce risk and turn engineering challenges into practical steps with confidence and efficiency.',
@@ -225,7 +225,7 @@ const en = {
   projectsPage: {
     eyebrow: 'Our Work',
     title: 'Selected Project Portfolio',
-    lead: 'Browse a curated selection of Verix projects across hospitality, residential, commercial, infrastructure and fuel-station sectors, presented in a clear and professional portfolio format.'
+    lead: 'Explore selected Verix projects across hospitality, residential, commercial, infrastructure and fuel-station sectors, reflecting the company’s engineering range and quality of deliverables.'
   },
   contactPage: {
     eyebrow: 'Contact',
@@ -280,9 +280,9 @@ const fr = {
     trust: ['Livrables clairs prêts à l’approbation', 'Précision technique à chaque étape', 'Solutions pratiques prêtes à l’exécution'],
     metrics: [
       { value: 13, suffix: '+', label: 'Services d’ingénierie spécialisés' },
-      { value: 20, suffix: '+', label: 'Projets dans le portefeuille' },
+      { value: 20, suffix: '+', label: 'Projets documentés' },
       { value: 5, suffix: '', label: 'Pays de présence' },
-      { value: 2026, suffix: '', label: 'Profil d’entreprise mis à jour' }
+      { value: 2026, suffix: '', label: 'Mise à jour du portefeuille' }
     ],
     introTitle: 'L’ingénierie commence par une décision claire',
     introText: 'Nous aidons les clients à comprendre la réalité technique du projet, à réduire les risques et à transformer les défis d’ingénierie en étapes pratiques, avec confiance et efficacité.',
@@ -314,7 +314,7 @@ const fr = {
   projectsPage: {
     eyebrow: 'Nos réalisations',
     title: 'Portefeuille de projets sélectionnés',
-    lead: 'Découvrez une sélection de projets Verix dans les secteurs hôtelier, résidentiel, commercial, infrastructurel et des stations-service, présentés dans un format clair et professionnel.'
+    lead: 'Découvrez une sélection de projets Verix dans les secteurs hôtelier, résidentiel, commercial, infrastructurel et des stations-service, reflétant l’étendue de l’expertise et la qualité des livrables.'
   },
   contactPage: {
     eyebrow: 'Contact',
