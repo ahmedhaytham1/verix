@@ -7,7 +7,7 @@ export function Metrics({ dict }: { dict: Dictionary }) {
         {dict.home.metrics.map((metric) => (
           <article key={metric.label} className="counter-card rounded-[1.8rem] border border-line/15 bg-text/5 p-6">
             <p className="text-5xl font-semibold text-gold">
-              <span data-count={metric.value}>0</span>{metric.suffix}
+              <span data-count={metric.value}>{metric.value}</span>{metric.suffix}
             </p>
             <p className="mt-4 leading-7 text-muted/80">{metric.label}</p>
           </article>

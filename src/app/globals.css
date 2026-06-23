@@ -303,3 +303,81 @@ html[dir='rtl'] .architectural-frame::after,
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* ------------------------------
+   Final client-ready polish + mobile refinements
+------------------------------ */
+@media (max-width: 1024px) {
+  .container-luxury { width: min(100% - 28px, 1180px); }
+  .gold-line::after { width: 54px; margin-inline-start: 12px; }
+  .floating-spec { display: none !important; }
+}
+
+@media (max-width: 768px) {
+  body {
+    background:
+      radial-gradient(circle at 20% 12%, rgba(198,161,91,.16), transparent 18rem),
+      rgb(var(--color-bg));
+  }
+
+  .container-luxury { width: min(100% - 22px, 1180px); }
+  .glass-panel { backdrop-filter: blur(14px); }
+  .engineering-field { opacity: .45; }
+  .engineering-field::before { background-size: 54px 54px; }
+  .engineering-field::after { width: 58vmax; height: 58vmax; top: -26vmax; opacity: .6; }
+  .drafting-line { width: 64vw; opacity: .45; }
+
+  header { padding-inline: .55rem !important; padding-top: .65rem !important; }
+  header .container-luxury { width: 100%; }
+  header .glass-panel { height: 4rem !important; padding-inline: .75rem !important; border-radius: 999px; }
+  header img { max-width: 36px; height: auto; }
+  header .leading-none .block:first-child { font-size: 1rem; letter-spacing: .22em; }
+  header .leading-none .block:last-child { display: none; }
+  header .luxury-button { width: 100%; }
+
+  .ultimate-hero { min-height: auto; padding-top: 6.4rem !important; padding-bottom: 3.8rem !important; }
+  .ultimate-hero .grid { min-height: auto !important; gap: 2rem !important; }
+  .u-hero-eyebrow { font-size: .66rem; letter-spacing: .22em; }
+  .u-title-line span { line-height: 1.08; }
+  .ultimate-hero h1 { margin-top: 1.15rem !important; font-size: clamp(2.55rem, 13vw, 4rem) !important; line-height: 1.05 !important; }
+  .u-copy { font-size: 1rem !important; line-height: 1.9rem !important; margin-top: 1.25rem !important; }
+  .u-copy.flex { display: grid !important; grid-template-columns: 1fr; }
+  .u-copy .luxury-button, .luxury-button { width: 100%; min-height: 3.1rem; }
+  .u-stat { padding: 1rem !important; }
+  .architectural-frame::before, .architectural-frame::after { display: none; }
+  .architectural-frame__media { border-radius: 1.45rem !important; }
+  .architectural-frame__media img { height: 22rem !important; }
+  .architectural-frame__media > div:last-child { left: .85rem !important; right: .85rem !important; bottom: .85rem !important; padding: 1rem !important; border-radius: 1.1rem !important; }
+  .architectural-frame__media p { font-size: .9rem !important; line-height: 1.65rem !important; }
+  .hero-aura { width: 22rem; height: 22rem; inset: auto -10rem 9rem auto; opacity: .45; }
+
+  .u-reveal h2, .u-reveal h3 { font-size: clamp(2rem, 9vw, 3rem) !important; }
+  .u-reveal p { font-size: 1rem; line-height: 1.9rem; }
+  .project-teaser img { height: 15rem !important; }
+  .project-teaser:first-child img { height: 18rem !important; }
+
+  .stagger-group { justify-content: flex-start !important; flex-wrap: nowrap !important; overflow-x: auto; padding-bottom: .75rem; scroll-snap-type: x mandatory; }
+  .stagger-group::-webkit-scrollbar { display: none; }
+  .stagger-group .stagger-item { white-space: nowrap; scroll-snap-align: start; padding-inline: 1rem !important; }
+
+  .reveal.rounded-\[2rem\] { border-radius: 1.35rem !important; }
+  .line-clamp-3 { -webkit-line-clamp: 2; }
+
+  .fixed.bottom-6.start-6 { bottom: 1rem !important; inset-inline-start: 1rem !important; }
+  .fixed.bottom-6.end-6 { bottom: 1rem !important; inset-inline-end: 1rem !important; }
+  .fixed.bottom-6.start-6 > button,
+  .fixed.bottom-6.end-6 { width: 3rem !important; height: 3rem !important; }
+  .fixed.bottom-6.start-6 > div { width: min(22rem, calc(100vw - 1.4rem)) !important; max-height: calc(100vh - 6rem); margin-bottom: .75rem !important; border-radius: 1.35rem !important; }
+
+  form.rounded-\[2\.25rem\], .luxury-card.rounded-\[2\.25rem\] { border-radius: 1.35rem !important; padding: 1.25rem !important; }
+  textarea { min-height: 9rem; }
+}
+
+@media (max-width: 480px) {
+  .container-luxury { width: min(100% - 18px, 1180px); }
+  header .leading-none .block:first-child { font-size: .86rem; letter-spacing: .18em; }
+  header span.relative.flex.h-12.w-12 { width: 2.55rem !important; height: 2.55rem !important; border-radius: .9rem !important; }
+  .ultimate-hero h1 { font-size: clamp(2.25rem, 14vw, 3.2rem) !important; }
+  .architectural-frame__media img { height: 19rem !important; }
+  .project-teaser img, .project-teaser:first-child img { height: 14rem !important; }
+}

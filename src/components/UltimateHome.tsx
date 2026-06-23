@@ -120,7 +120,7 @@ export function UltimateHome({ locale, dict, projects }: { locale: Locale; dict:
             <div className="grid gap-4 md:grid-cols-3">
               {dict.home.metrics.slice(0, 3).map((metric) => (
                 <div key={metric.label} className="u-reveal rounded-[1.8rem] border border-line/15 bg-surface/60 p-6 shadow-luxury">
-                  <p className="text-5xl font-semibold text-gold"><span data-count={metric.value}>0</span>{metric.suffix}</p>
+                  <p className="text-5xl font-semibold text-gold"><span data-count={metric.value}>{metric.value}</span>{metric.suffix}</p>
                   <p className="mt-4 text-sm leading-7 text-muted/80">{metric.label}</p>
                 </div>
               ))}

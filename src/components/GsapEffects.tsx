@@ -8,6 +8,9 @@ export function GsapEffects() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
     const ctx = gsap.context(() => {
       gsap.to('.scroll-progress', {
         scaleX: 1,
@@ -15,23 +18,19 @@ export function GsapEffects() {
         scrollTrigger: { trigger: document.documentElement, start: 'top top', end: 'bottom bottom', scrub: 0.2 }
       });
 
-      gsap.from('.hero-kicker', { y: 26, opacity: 0, duration: 0.9, ease: 'power3.out', delay: 1.05 });
-      gsap.from('.hero-title-word span', {
-        yPercent: 112,
-        duration: 1.1,
-        ease: 'power4.out',
-        stagger: 0.08,
-        delay: 1.18
-      });
-      gsap.from('.hero-copy', { y: 28, opacity: 0, duration: 0.9, ease: 'power3.out', delay: 1.45, stagger: 0.12 });
-      gsap.from('.hero-visual', { clipPath: 'inset(0 0 100% 0 round 34px)', y: 24, duration: 1.35, ease: 'power4.out', delay: 1.3 });
-      gsap.from('.hero-trust', { y: 20, opacity: 0, duration: 0.8, stagger: 0.08, ease: 'power3.out', delay: 1.8 });
+      const intro = gsap.timeline({ defaults: { ease: 'power4.out' } });
+      intro
+        .from('.u-hero-eyebrow, .hero-kicker', { y: 24, opacity: 0, duration: 0.75 })
+        .from('.u-title-line span, .hero-title-word span', { yPercent: 112, duration: 0.95, stagger: 0.08 }, '-=0.35')
+        .from('.u-copy, .hero-copy', { y: 28, opacity: 0, duration: 0.75, stagger: 0.09 }, '-=0.45')
+        .from('.u-frame, .hero-visual', { clipPath: 'inset(0 0 100% 0 round 34px)', y: 24, duration: 1.1 }, '-=0.75')
+        .from('.u-stat, .hero-trust', { y: 20, opacity: 0, duration: 0.7, stagger: 0.08 }, '-=0.45');
 
-      gsap.utils.toArray<HTMLElement>('.reveal').forEach((el) => {
+      gsap.utils.toArray<HTMLElement>('.reveal, .u-reveal').forEach((el) => {
         gsap.from(el, {
           y: 42,
           opacity: 0,
-          duration: 0.9,
+          duration: 0.85,
           ease: 'power3.out',
           scrollTrigger: { trigger: el, start: 'top 84%', once: true }
         });
@@ -40,7 +39,7 @@ export function GsapEffects() {
       gsap.utils.toArray<HTMLElement>('.image-reveal').forEach((el) => {
         gsap.from(el, {
           clipPath: 'inset(0 0 100% 0 round 28px)',
-          duration: 1.15,
+          duration: 1.05,
           ease: 'power4.out',
           scrollTrigger: { trigger: el, start: 'top 82%', once: true }
         });
@@ -49,18 +48,28 @@ export function GsapEffects() {
       gsap.utils.toArray<HTMLElement>('.stagger-group').forEach((group) => {
         const items = group.querySelectorAll('.stagger-item');
         gsap.from(items, {
-          y: 28,
+          y: 22,
           opacity: 0,
-          duration: 0.75,
-          stagger: 0.08,
+          duration: 0.65,
+          stagger: 0.055,
           ease: 'power3.out',
-          scrollTrigger: { trigger: group, start: 'top 82%', once: true }
+          scrollTrigger: { trigger: group, start: 'top 84%', once: true }
+        });
+      });
+
+      gsap.utils.toArray<HTMLElement>('.project-teaser').forEach((el) => {
+        gsap.from(el, {
+          y: 34,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: { trigger: el, start: 'top 88%', once: true }
         });
       });
 
       gsap.utils.toArray<HTMLElement>('.parallax-media').forEach((el) => {
         gsap.to(el, {
-          yPercent: -8,
+          yPercent: -6,
           ease: 'none',
           scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: 0.7 }
         });
@@ -71,12 +80,12 @@ export function GsapEffects() {
         const obj = { val: 0 };
         gsap.to(obj, {
           val: value,
-          duration: 1.8,
+          duration: 1.6,
           ease: 'power2.out',
           scrollTrigger: { trigger: el, start: 'top 88%', once: true },
-          onUpdate: () => {
-            el.textContent = Math.round(obj.val).toString();
-          }
+          onStart: () => { el.textContent = '0'; },
+          onUpdate: () => { el.textContent = Math.round(obj.val).toString(); },
+          onComplete: () => { el.textContent = value.toString(); }
         });
       });
     });

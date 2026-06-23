@@ -29,9 +29,9 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const pathname = usePathname();
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
+    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 md:px-4 md:pt-4">
       <div className="container-luxury">
-        <div className="glass-panel flex h-20 items-center justify-between rounded-full px-5 shadow-luxury">
+        <div className="glass-panel flex h-16 items-center justify-between rounded-full px-3 shadow-luxury md:h-20 md:px-5">
           <Link href={localizePath(locale, '/')} aria-label="Verix home" className="shrink-0">
             <Logo />
           </Link>
@@ -81,7 +81,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
 
       {open && (
         <div className="container-luxury mt-3 lg:hidden">
-          <div className="glass-panel rounded-[2rem] p-4">
+          <div className="glass-panel max-h-[calc(100vh-6rem)] overflow-y-auto rounded-[1.6rem] p-4">
             <div className="grid gap-2">
               {navItems.map((item) => (
                 <Link
@@ -109,6 +109,13 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               ))}
               <ThemeToggle darkLabel={dict.common.dark} lightLabel={dict.common.light} />
             </div>
+            <Link
+              onClick={() => setOpen(false)}
+              href={localizePath(locale, '/contact')}
+              className="luxury-button mt-4 bg-gold text-bg hover:shadow-gold"
+            >
+              {dict.nav.cta}
+            </Link>
           </div>
         </div>
       )}

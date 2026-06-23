@@ -122,8 +122,8 @@ const ar = {
   },
   projectsPage: {
     eyebrow: 'أعمالنا',
-    title: 'مشاريع تعكس خبرة Verix في الاستشارات الهندسية',
-    lead: 'تضم محفظة Verix نماذج من مشاريع فندقية وسكنية وتجارية وبنية تحتية ومحطات وقود، مع عرض واضح لخبرات الشركة وتنوع نطاق أعمالها الهندسية.'
+    title: 'محفظة مشاريع مختارة',
+    lead: 'استعرض مجموعة مختارة من مشاريع Verix في قطاعات الضيافة، السكني، التجاري، البنية التحتية، ومحطات الوقود. تم تنظيم الصفحة كمعرض مشاريع واضح واحترافي لسهولة التصفح.'
   },
   contactPage: {
     eyebrow: 'تواصل معنا',
@@ -135,7 +135,7 @@ const ar = {
     service: 'الخدمة المطلوبة',
     message: 'تفاصيل المشروع',
     submit: 'إرسال الطلب',
-    note: 'النموذج جاهز للربط مع Sanity أو البريد الإلكتروني أو أي نظام CRM لاحقاً.'
+    note: 'يرجى تعبئة البيانات، وسيقوم فريق Verix بمراجعة الطلب والتواصل معكم في أقرب وقت.'
   },
   values: [
     { title: 'الدقة', description: 'نؤمن أن التفاصيل الهندسية الصغيرة تصنع فرقاً كبيراً في جودة القرار ونجاح المشروع.' },
@@ -237,7 +237,7 @@ const en = {
     service: 'Required Service',
     message: 'Project Details',
     submit: 'Submit Request',
-    note: 'This form is ready to connect with Sanity, email or any CRM system later.'
+    note: 'Please share your details and the Verix team will review your request and contact you shortly.'
   },
   values: [
     { title: 'Precision', description: 'Small engineering details make a major difference in decision quality and project success.' },
@@ -292,7 +292,7 @@ const fr = {
   about: {
     eyebrow: 'À propos de Verix',
     title: 'Un cabinet de conseil en ingénierie fondé sur l’expérience, la clarté et la responsabilité',
-    lead: 'Verix est un cabinet spécialisé de conseil en ingénierie basé à La Mecque. L’entreprise propose des solutions intégrées qui aident les clients à prendre des décisions claires et fiables aux étapes de planification, de conception, d’exécution et de développement.',
+    lead: 'Verix est un cabinet de conseil en ingénierie intégrée basé à La Mecque. L’entreprise propose des solutions intégrées qui aident les clients à prendre des décisions claires et fiables aux étapes de planification, de conception, d’exécution et de développement.',
     visionTitle: 'Vision',
     vision: 'Être un partenaire d’ingénierie qui crée la clarté décisionnelle avant l’exécution et transforme la complexité technique en projets réussis avec confiance, efficacité et durabilité.',
     missionTitle: 'Mission',
@@ -326,7 +326,7 @@ const fr = {
     service: 'Service demandé',
     message: 'Détails du projet',
     submit: 'Envoyer la demande',
-    note: 'Ce formulaire est prêt à être relié à Sanity, à l’e-mail ou à un CRM ultérieurement.'
+    note: 'Veuillez renseigner vos informations ; l’équipe Verix étudiera votre demande et vous contactera dans les meilleurs délais.'
   },
   values: [
     { title: 'Précision', description: 'Les petits détails d’ingénierie font une grande différence dans la qualité de la décision et la réussite du projet.' },
@@ -378,13 +378,122 @@ const baseProjects: BaseProject[] = [
   { id: 'nac-residential-3', category: 'residential', image: '/images/project-gallery/project-21-01.webp', images: ['/images/project-gallery/project-21-01.webp', '/images/project-gallery/project-21-02.webp', '/images/project-gallery/project-21-03.webp', '/images/project-gallery/project-21-04.webp'], ar: 'أعمال سكنية — العاصمة الإدارية', en: 'Residential Works — New Administrative Capital', fr: 'Travaux résidentiels — Nouvelle capitale administrative' }
 ];
 
-function projectDescription(locale: Locale, category: string) {
-  const text = {
-    ar: 'مشروع ضمن محفظة Verix يعكس تنوع خبرة الشركة في تقديم الخدمات الهندسية للمشاريع المختلفة، مع تركيز واضح على جودة المخرجات ودقة التنفيذ.',
-    en: 'A project within the Verix portfolio that reflects the company’s experience across different engineering scopes, with a focus on reliable deliverables and execution clarity.',
-    fr: 'Un projet du portefeuille Verix qui reflète l’expérience de l’entreprise dans différents périmètres d’ingénierie, avec une attention portée à la fiabilité des livrables et à la clarté d’exécution.'
+
+function projectDescription(locale: Locale, project: BaseProject) {
+  const descriptions: Record<string, Record<Locale, string>> = {
+    'samarn-hotel': {
+      ar: 'مشروع ضيافة متعدد الاستخدامات يجمع بين الاستخدام التجاري والسكني، ويتطلب تنسيقاً دقيقاً بين التخطيط المعماري، متطلبات التشغيل، ومعايير السلامة والاعتماد.',
+      en: 'A mixed-use hospitality project combining commercial and residential functions, requiring careful coordination between architectural planning, operational needs and approval requirements.',
+      fr: 'Un projet hôtelier mixte associant fonctions commerciales et résidentielles, nécessitant une coordination précise entre planification architecturale, exploitation et exigences d’approbation.'
+    },
+    'al-rajhi-hotel': {
+      ar: 'مشروع فندقي يبرز أهمية وضوح المخططات وتكامل الأعمال الهندسية لضمان تجربة تشغيلية منظمة وجودة تنفيذ قابلة للاعتماد.',
+      en: 'A hospitality project highlighting the importance of clear drawings and integrated engineering coordination to support organized operation and reliable delivery.',
+      fr: 'Un projet hôtelier qui souligne l’importance de plans clairs et d’une coordination d’ingénierie intégrée pour une exploitation organisée et une livraison fiable.'
+    },
+    'samarn-waqf': {
+      ar: 'مشروع وقف يتطلب حلولاً هندسية عملية تراعي طبيعة الاستخدام، كفاءة المساحات، ووضوح المتطلبات الفنية قبل مراحل التنفيذ.',
+      en: 'A waqf development requiring practical engineering solutions that consider use requirements, space efficiency and clear technical outputs before execution.',
+      fr: 'Un projet de waqf nécessitant des solutions d’ingénierie pratiques, adaptées aux usages, à l’efficacité des espaces et à la clarté des livrables techniques.'
+    },
+    'al-nimri-waqf': {
+      ar: 'مشروع وقفي متعدد المتطلبات يعكس خبرة Verix في تنظيم المدخلات الفنية وتحويلها إلى مخططات ومخرجات قابلة للاعتماد.',
+      en: 'A waqf project with multiple requirements, reflecting Verix’s ability to organize technical inputs and turn them into clear, approval-ready deliverables.',
+      fr: 'Un projet de waqf aux exigences multiples, illustrant la capacité de Verix à structurer les données techniques en livrables clairs et validables.'
+    },
+    sabbagh: {
+      ar: 'مشروع ضمن محفظة الأعمال الخاصة يتطلب معالجة هندسية متوازنة بين المتطلبات التصميمية، الجدوى الفنية، وجودة المخرجات النهائية.',
+      en: 'A private portfolio project requiring balanced engineering treatment across design requirements, technical feasibility and final deliverable quality.',
+      fr: 'Un projet privé nécessitant un équilibre entre exigences de conception, faisabilité technique et qualité des livrables finaux.'
+    },
+    alrowada: {
+      ar: 'مشروع سكني يركز على كفاءة التخطيط، جودة المخططات، وتقديم حلول واضحة تساعد على تنفيذ مراحل العمل بثقة.',
+      en: 'A residential project focused on planning efficiency, drawing quality and clear solutions that support confident execution across project stages.',
+      fr: 'Un projet résidentiel axé sur l’efficacité de la planification, la qualité des plans et des solutions claires pour une exécution maîtrisée.'
+    },
+    desalination: {
+      ar: 'مشروع بنية تحتية لمحطة تحلية مياه البحر يتطلب دراسة فنية دقيقة وتنسيقاً هندسياً مع طبيعة المنشأة ومتطلبات الجهات المختصة.',
+      en: 'An infrastructure project for a seawater desalination station, requiring precise technical study and engineering coordination aligned with facility and authority requirements.',
+      fr: 'Un projet d’infrastructure pour une station de dessalement, nécessitant une étude technique précise et une coordination adaptée aux exigences de l’installation.'
+    },
+    'al-shalawi-mall': {
+      ar: 'مشروع تجاري يتطلب وضوحاً في الحركة الداخلية والخارجية، تنظيم المساحات، وتنسيقاً فنياً يخدم تجربة الزوار وكفاءة التشغيل.',
+      en: 'A commercial project requiring clear internal and external movement, efficient space organization and technical coordination for visitor experience and operations.',
+      fr: 'Un projet commercial nécessitant une circulation claire, une organisation efficace des espaces et une coordination technique au service de l’exploitation.'
+    },
+    'dam-residence': {
+      ar: 'مجمع سكني يعكس أهمية التكامل بين التخطيط المعماري، المخططات التنفيذية، ومتطلبات الجودة لتحقيق بيئة سكنية منظمة.',
+      en: 'A residential complex reflecting the need for integrated architectural planning, execution drawings and quality requirements to create an organized living environment.',
+      fr: 'Un complexe résidentiel illustrant l’intégration de la planification, des plans d’exécution et des exigences de qualité.'
+    },
+    'omran-al-dam': {
+      ar: 'مشروع برج تجاري يتطلب تنسيقاً هندسياً دقيقاً بين المتطلبات المعمارية والإنشائية وأنظمة التشغيل والسلامة.',
+      en: 'A commercial tower project requiring precise coordination between architectural, structural, operational and safety requirements.',
+      fr: 'Un projet de tour commerciale nécessitant une coordination précise entre architecture, structure, exploitation et sécurité.'
+    },
+    'drive-thru': {
+      ar: 'مشروع درايف ثرو يركز على تنظيم الحركة، سهولة الوصول، وضمان توافق التصميم مع متطلبات التشغيل والسلامة.',
+      en: 'A drive-thru project focused on movement organization, accessibility and alignment between design, operational and safety requirements.',
+      fr: 'Un projet drive-thru axé sur l’organisation des flux, l’accessibilité et l’adéquation entre conception, exploitation et sécurité.'
+    },
+    'fifth-settlement': {
+      ar: 'مجمع تجاري في التجمع الخامس يركز على كفاءة التوزيع، وضوح المخططات، وتقديم تجربة تجارية منظمة قابلة للتطوير.',
+      en: 'A commercial complex in the Fifth Settlement focused on efficient layout, clear drawings and a scalable commercial experience.',
+      fr: 'Un complexe commercial au Fifth Settlement, axé sur l’efficacité de l’aménagement, la clarté des plans et une expérience commerciale évolutive.'
+    },
+    'nac-residential-1': {
+      ar: 'مشروع سكني في العاصمة الإدارية الجديدة يعكس خبرة في تنظيم المتطلبات التصميمية وتقديم مخرجات هندسية واضحة للمشروعات الحديثة.',
+      en: 'A residential project in the New Administrative Capital, reflecting experience in organizing design requirements and delivering clear engineering outputs for modern developments.',
+      fr: 'Un projet résidentiel dans la nouvelle capitale administrative, reflétant une expertise dans la structuration des exigences de conception.'
+    },
+    'nac-residential-2': {
+      ar: 'تطوير سكني بالعاصمة الإدارية يعتمد على وضوح التخطيط، جودة العرض الهندسي، وتنسيق العناصر الفنية قبل التنفيذ.',
+      en: 'A residential development in the New Administrative Capital built around planning clarity, engineering presentation quality and technical coordination before execution.',
+      fr: 'Un développement résidentiel fondé sur la clarté de la planification, la qualité de la présentation technique et la coordination avant exécution.'
+    },
+    'nac-residential-3': {
+      ar: 'أعمال سكنية حديثة تتطلب مخرجات هندسية دقيقة تساعد على اعتماد المشروع وتنظيم مراحل التنفيذ بكفاءة.',
+      en: 'Modern residential works requiring precise engineering deliverables that support approval and efficient execution planning.',
+      fr: 'Des travaux résidentiels modernes nécessitant des livrables précis pour faciliter l’approbation et l’organisation de l’exécution.'
+    }
+  };
+
+  const fuelText = {
+    ar: 'مشروع محطة وقود يتطلب مراعاة اشتراطات السلامة، حركة المركبات، المداخل والمخارج، والتنسيق مع متطلبات الدفاع المدني والجهات المختصة.',
+    en: 'A fuel-station project requiring careful consideration of safety requirements, vehicle circulation, access points and coordination with civil defense and regulatory standards.',
+    fr: 'Un projet de station-service nécessitant une prise en compte précise de la sécurité, des flux véhicules, des accès et des exigences réglementaires.'
   } as const;
-  return text[locale];
+
+  const categoryText: Record<string, Record<Locale, string>> = {
+    hotels: {
+      ar: 'مشروع ضيافة يتطلب تكاملاً بين المخططات المعمارية، متطلبات التشغيل، ومعايير الجودة لضمان تجربة استخدام واضحة ومنظمة.',
+      en: 'A hospitality project requiring integration between architectural drawings, operational requirements and quality standards.',
+      fr: 'Un projet hôtelier nécessitant l’intégration des plans, des exigences d’exploitation et des standards de qualité.'
+    },
+    mixed: {
+      ar: 'مشروع متعدد الاستخدام يتطلب وضوحاً في توزيع الوظائف، كفاءة المساحات، وتنسيقاً فنياً بين الاستخدامات المختلفة.',
+      en: 'A mixed-use project requiring clear functional distribution, space efficiency and technical coordination between different uses.',
+      fr: 'Un projet mixte nécessitant une répartition claire des fonctions, l’efficacité des espaces et une coordination technique.'
+    },
+    residential: {
+      ar: 'مشروع سكني يركز على كفاءة التخطيط، جودة المخططات، ووضوح مراحل التنفيذ بما يدعم بيئة سكنية عملية ومنظمة.',
+      en: 'A residential project focused on planning efficiency, drawing quality and clear execution stages for an organized living environment.',
+      fr: 'Un projet résidentiel axé sur l’efficacité de la planification, la qualité des plans et la clarté de l’exécution.'
+    },
+    commercial: {
+      ar: 'مشروع تجاري يركز على تجربة المستخدم، كفاءة الحركة، وتنظيم المساحات بما يخدم التشغيل والاستثمار.',
+      en: 'A commercial project focused on user experience, circulation efficiency and space organization to support operation and investment.',
+      fr: 'Un projet commercial axé sur l’expérience utilisateur, l’efficacité des circulations et l’organisation des espaces.'
+    },
+    infrastructure: {
+      ar: 'مشروع بنية تحتية يتطلب دراسة فنية دقيقة وتنسيقاً مع الجهات المختصة لضمان جاهزية التنفيذ والاعتماد.',
+      en: 'An infrastructure project requiring precise technical study and coordination with relevant authorities for approval and execution readiness.',
+      fr: 'Un projet d’infrastructure nécessitant une étude technique précise et une coordination avec les autorités concernées.'
+    },
+    fuel: fuelText
+  };
+
+  return descriptions[project.id]?.[locale] ?? categoryText[project.category]?.[locale] ?? categoryText.mixed[locale];
 }
 
 export const dictionary = { ar, en, fr } as const;
@@ -401,7 +510,7 @@ export function getProjects(locale: Locale): Project[] {
     category: project.category,
     title: project[locale as 'ar' | 'en' | 'fr'],
     owner: locale === 'ar' ? project.ownerAr : undefined,
-    description: projectDescription(locale, project.category),
+    description: projectDescription(locale, project),
     image: project.image,
     images: project.images ?? [project.image]
   }));
