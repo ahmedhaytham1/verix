@@ -355,9 +355,9 @@ const fr = {
 };
 
 const baseProjects: BaseProject[] = [
-  { id: 'hotel-waqf-samarn-commercial-residential', category: 'hotels', image: '/images/project-gallery/project-01-01.webp', images: ['/images/project-gallery/project-01-01.webp', '/images/project-gallery/project-01-02.webp', '/images/project-gallery/project-01-03.webp', '/images/project-gallery/project-01-04.webp'], ar: 'HOTEL WAQF SAMARN (مبنى تجاري سكني)', en: 'HOTEL WAQF SAMARN (Commercial Residential Building)', fr: 'HOTEL WAQF SAMARN (bâtiment commercial et résidentiel)' },
-  { id: 'al-rajhi-hotel', category: 'hotels', image: '/images/project-gallery/project-02-01.webp', images: ['/images/project-gallery/project-02-01.webp', '/images/project-gallery/project-02-02.webp', '/images/project-gallery/project-02-03.webp', '/images/project-gallery/project-02-04.webp', '/images/project-gallery/project-02-05.webp'], ar: 'AL RAJHI HOTEL (فندق الراجحي)', en: 'AL RAJHI HOTEL', fr: 'AL RAJHI HOTEL' },
-  { id: 'smarn-waqf', category: 'mixed', image: '/images/project-gallery/project-03-01.webp', images: ['/images/project-gallery/project-03-01.webp', '/images/project-gallery/project-03-02.webp'], ar: 'SMARN WAQF (مشروع وقف سمارن)', en: 'SMARN WAQF', fr: 'SMARN WAQF' },
+  { id: 'hotel-waqf-samarn-commercial-residential', category: 'hotels', image: '/images/project-gallery/project-01-01.webp', images: ['/images/project-gallery/project-01-01.webp', '/images/project-gallery/project-01-02.webp', '/images/project-gallery/project-01-03.webp', '/images/project-gallery/project-01-04.webp'], ar: 'مبنى تجاري سكني', en: 'HOTEL WAQF SAMARN (Commercial Residential Building)', fr: 'HOTEL WAQF SAMARN (bâtiment commercial et résidentiel)' },
+  { id: 'al-rajhi-hotel', category: 'hotels', image: '/images/project-gallery/project-02-01.webp', images: ['/images/project-gallery/project-02-01.webp', '/images/project-gallery/project-02-02.webp', '/images/project-gallery/project-02-03.webp', '/images/project-gallery/project-02-04.webp', '/images/project-gallery/project-02-05.webp'], ar: 'فندق الراجحي - AL RAJHI HOTEL', en: 'AL RAJHI HOTEL', fr: 'AL RAJHI HOTEL' },
+  { id: 'smarn-waqf', category: 'mixed', image: '/images/project-gallery/project-03-01.webp', images: ['/images/project-gallery/project-03-01.webp', '/images/project-gallery/project-03-02.webp'], ar: 'مشروع وقف سمارن - SMARN WAQF', en: 'SMARN WAQF', fr: 'SMARN WAQF' },
   { id: 'al-nimri-waqf', category: 'mixed', image: '/images/project-gallery/project-04-01.webp', images: ['/images/project-gallery/project-04-01.webp', '/images/project-gallery/project-04-02.webp', '/images/project-gallery/project-04-03.webp', '/images/project-gallery/project-04-04.webp'], ar: 'AL-NIMRI WAQF (وقف النمري)', en: 'AL-NIMRI WAQF', fr: 'AL-NIMRI WAQF' },
   { id: 'sabbagh-abdelghani-mahmoud', category: 'mixed', image: '/images/project-gallery/project-05-01.webp', images: ['/images/project-gallery/project-05-01.webp', '/images/project-gallery/project-05-02.webp', '/images/project-gallery/project-05-03.webp', '/images/project-gallery/project-05-04.webp', '/images/project-gallery/project-05-05.webp'], ar: 'SABBAGH ABDELGHANI MAHMOUD (ورثة محمود عبدالغني صباغ)', en: 'SABBAGH ABDELGHANI MAHMOUD', fr: 'SABBAGH ABDELGHANI MAHMOUD' },
   { id: 'alrowada', category: 'residential', image: '/images/project-gallery/project-06-01.webp', images: ['/images/project-gallery/project-06-01.webp', '/images/project-gallery/project-06-02.webp', '/images/project-gallery/project-06-03.webp', '/images/project-gallery/project-06-04.webp'], ar: 'ALROWADA (الروضة)', en: 'ALROWADA', fr: 'ALROWADA' },
@@ -380,7 +380,7 @@ const baseProjects: BaseProject[] = [
 function projectDescription(locale: Locale, project: BaseProject) {
   const descriptions: Record<string, Record<Locale, string>> = {
     'hotel-waqf-samarn-commercial-residential': {
-      ar: 'مشروع فندقي تجاري سكني يتطلب تنسيقاً دقيقاً بين الاستخدامات المختلفة، ووضوحاً في المخططات، وتكاملاً في متطلبات التشغيل والاعتماد.',
+      ar: 'مبنى تجاري سكني مستقل ضمن أعمال وقف سمارن، يتطلب تنسيقاً دقيقاً بين الاستخدامات المختلفة، ووضوحاً في المخططات، وتكاملاً في المتطلبات الفنية.',
       en: 'A commercial residential hotel project requiring precise coordination between different uses, clear drawings and integrated approval requirements.',
       fr: 'Un projet hôtelier commercial et résidentiel nécessitant une coordination précise entre les usages, les plans et les exigences d’approbation.'
     },
@@ -390,7 +390,7 @@ function projectDescription(locale: Locale, project: BaseProject) {
       fr: 'Un projet hôtelier qui souligne l’importance de plans clairs et d’une coordination d’ingénierie intégrée.'
     },
     'smarn-waqf': {
-      ar: 'مشروع وقف سمارن يتطلب حلولاً هندسية عملية تراعي طبيعة الاستخدام، وكفاءة المساحات، ووضوح المتطلبات الفنية قبل مراحل التنفيذ.',
+      ar: 'مشروع وقف سمارن مستقل عن المبنى التجاري السكني، ويعرض نموذجاً آخر من أعمال سمارن بمتطلبات تصميمية وتنفيذية مختلفة.',
       en: 'The Smarn Waqf project requires practical engineering solutions that consider use requirements, space efficiency and clear technical outputs before execution.',
       fr: 'Le projet SMARN WAQF nécessite des solutions d’ingénierie pratiques adaptées aux usages, à l’efficacité des espaces et aux livrables techniques.'
     },
