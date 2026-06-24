@@ -2,8 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowDown, ArrowUpLeft, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import type { Dictionary, Project } from '@/data/content';
-import { company } from '@/data/content';
-import { localizePath, type Locale } from '@/lib/i18n';
+import type { Locale } from '@/lib/i18n';
 import { EngineeringField } from './EngineeringField';
 
 function titleLines(title: string) {
@@ -59,11 +58,11 @@ export function UltimateHome({ locale, dict, projects }: { locale: Locale; dict:
             <p className="u-copy mt-6 max-w-3xl text-base leading-8 text-muted/90 sm:text-lg md:mt-7 md:text-2xl md:leading-10">{dict.home.description}</p>
 
             <div className="u-copy mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row">
-              <Link href={localizePath(locale, '/projects')} className="luxury-button w-full bg-gold text-bg hover:shadow-gold sm:w-auto">
+              <Link href="#projects" className="luxury-button w-full bg-gold text-bg hover:shadow-gold sm:w-auto">
                 {labels.viewProjects}
                 <Arrow className="h-4 w-4" />
               </Link>
-              <Link href={localizePath(locale, '/contact')} className="luxury-button w-full border border-line/25 text-text hover:border-gold/60 hover:text-gold sm:w-auto">
+              <Link href="#contact" className="luxury-button w-full border border-line/25 text-text hover:border-gold/60 hover:text-gold sm:w-auto">
                 {labels.directContact}
               </Link>
             </div>
@@ -93,10 +92,6 @@ export function UltimateHome({ locale, dict, projects }: { locale: Locale; dict:
                 <p className="text-xs font-bold uppercase tracking-luxe text-gold">{labels.visualLine}</p>
                 <p className="mt-3 text-lg leading-8 text-text/90">{dict.home.subtitle}</p>
               </div>
-            </div>
-            <div className="floating-spec glass-panel absolute -bottom-8 hidden max-w-sm rounded-[1.6rem] p-5 lg:block">
-              <p className="text-xs font-bold uppercase tracking-luxe text-gold">{company.name}</p>
-              <p className="mt-3 text-sm leading-7 text-muted/90">{labels.permits}</p>
             </div>
           </div>
         </div>
@@ -133,7 +128,7 @@ export function UltimateHome({ locale, dict, projects }: { locale: Locale; dict:
                 <p className="text-xs font-bold uppercase tracking-luxe text-gold">{labels.proof}</p>
                 <h3 className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">{labels.portfolio}</h3>
                 <p className="mt-5 text-lg leading-9 text-muted/85">{labels.portfolioLead}</p>
-                <Link href={localizePath(locale, '/projects')} className="luxury-button mt-8 bg-gold text-bg hover:shadow-gold">
+                <Link href="#projects" className="luxury-button mt-8 bg-gold text-bg hover:shadow-gold">
                   {labels.viewProjects}
                   <Arrow className="h-4 w-4" />
                 </Link>
@@ -142,7 +137,7 @@ export function UltimateHome({ locale, dict, projects }: { locale: Locale; dict:
                 {featured.map((project, index) => (
                   <Link
                     key={project.id}
-                    href={localizePath(locale, '/projects')}
+                    href="#projects"
                     className={`project-teaser group relative overflow-hidden rounded-[1.8rem] border border-line/15 bg-bg ${index === 0 ? 'sm:row-span-2' : ''}`}
                   >
                     <Image

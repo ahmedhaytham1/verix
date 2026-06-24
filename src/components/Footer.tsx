@@ -1,16 +1,22 @@
 import Link from 'next/link';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { company, type Dictionary } from '@/data/content';
-import { localizePath, type Locale } from '@/lib/i18n';
+import type { Locale } from '@/lib/i18n';
 import { Logo } from './Logo';
 
 const links = [
-  { key: 'home', href: '/' },
-  { key: 'services', href: '/services' },
-  { key: 'projects', href: '/projects' },
-  { key: 'about', href: '/about' },
-  { key: 'contact', href: '/contact' }
+  { key: 'home', hash: '#home' },
+  { key: 'services', hash: '#services' },
+  { key: 'projects', hash: '#projects' },
+  { key: 'about', hash: '#about' },
+  { key: 'contact', hash: '#contact' }
 ] as const;
+
+function anchorPath(locale: Locale, hash: string) {
+  return `/${locale}${hash}`;
+}
+
+const mapUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Makkah Saudi Arabia');
 
 export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
@@ -24,7 +30,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           <p className="text-sm font-semibold uppercase tracking-luxe text-gold">{dict.nav.home}</p>
           <div className="mt-5 grid gap-3">
             {links.map((link) => (
-              <Link key={link.key} href={localizePath(locale, link.href)} className="text-muted/80 transition hover:text-gold">
+              <Link key={link.key} href={anchorPath(locale, link.hash)} className="text-muted/80 transition hover:text-gold">
                 {dict.nav[link.key]}
               </Link>
             ))}
@@ -33,9 +39,9 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         <div>
           <p className="text-sm font-semibold uppercase tracking-luxe text-gold">{dict.nav.contact}</p>
           <div className="mt-5 grid gap-4 text-muted/80">
-            <p className="flex items-center gap-3"><Phone className="h-4 w-4 text-gold" /> <bdi dir="ltr" className="font-medium tracking-wide">{company.phone}</bdi></p>
-            <p className="flex items-center gap-3"><Mail className="h-4 w-4 text-gold" /> <bdi dir="ltr">{company.email}</bdi></p>
-            <p className="flex items-center gap-3"><MapPin className="h-4 w-4 text-gold" /> {company.address[locale]}</p>
+            <a href={`tel:${company.phone.replace(/\s+/g, '')}`} className="flex items-center gap-3 transition hover:text-gold"><Phone className="h-4 w-4 text-gold" /> <bdi dir="ltr" className="font-medium tracking-wide">{company.phone}</bdi></a>
+            <a href={`mailto:${company.email}`} className="flex items-center gap-3 transition hover:text-gold"><Mail className="h-4 w-4 text-gold" /> <bdi dir="ltr">{company.email}</bdi></a>
+            <a href={mapUrl} target="_blank" rel="noreferrer" className="flex items-center gap-3 transition hover:text-gold"><MapPin className="h-4 w-4 text-gold" /> {company.address[locale]}</a>
           </div>
         </div>
       </div>

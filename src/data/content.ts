@@ -35,7 +35,7 @@ export const company = {
   email: 'info@verix.sa',
   phone: '+966 56 401 4047',
   secondaryPhone: '+966 56 868 6986',
-  whatsapp: '966564014047',
+  whatsapp: '00966564014047',
   website: 'www.verix.sa',
   address: {
     ar: 'مكة المكرمة، المملكة العربية السعودية',

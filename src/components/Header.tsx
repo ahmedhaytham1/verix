@@ -10,18 +10,21 @@ import { Logo } from './Logo';
 import { ThemeToggle } from './ThemeToggle';
 
 const navItems = [
-  { key: 'home', href: '/' },
-  { key: 'services', href: '/services' },
-  { key: 'projects', href: '/projects' },
-  { key: 'about', href: '/about' },
-  { key: 'contact', href: '/contact' }
+  { key: 'home', hash: '#home' },
+  { key: 'services', hash: '#services' },
+  { key: 'projects', hash: '#projects' },
+  { key: 'about', hash: '#about' },
+  { key: 'contact', hash: '#contact' }
 ] as const;
+
+function anchorPath(locale: Locale, hash: string) {
+  return `/${locale}${hash}`;
+}
 
 function switchLocalePath(pathname: string, nextLocale: Locale) {
   const parts = pathname.split('/').filter(Boolean);
   if (parts.length === 0) return `/${nextLocale}`;
-  parts[0] = nextLocale;
-  return `/${parts.join('/')}`;
+  return `/${nextLocale}`;
 }
 
 export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
@@ -55,7 +58,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             {navItems.map((item) => (
               <Link
                 key={item.key}
-                href={localizePath(locale, item.href)}
+                href={anchorPath(locale, item.hash)}
                 className="rounded-full px-4 py-2 text-sm font-semibold text-text/70 transition hover:bg-text/10 hover:text-gold"
               >
                 {dict.nav[item.key]}
@@ -78,7 +81,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               ))}
             </div>
             <ThemeToggle darkLabel={dict.common.dark} lightLabel={dict.common.light} />
-            <Link href={localizePath(locale, '/contact')} className="luxury-button bg-text text-bg hover:shadow-gold">
+            <Link href={anchorPath(locale, '#contact')} className="luxury-button bg-text text-bg hover:shadow-gold">
               {dict.nav.cta}
             </Link>
           </div>
@@ -96,7 +99,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               {navItems.map((item) => (
                 <Link
                   key={item.key}
-                  href={localizePath(locale, item.href)}
+                  href={anchorPath(locale, item.hash)}
                   className="rounded-2xl border border-line/10 bg-text/[.035] px-4 py-4 text-base font-semibold text-text transition hover:border-gold/40 hover:text-gold"
                 >
                   {dict.nav[item.key]}
@@ -120,7 +123,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
 
             <div className="mt-4 flex items-center justify-between gap-3">
               <ThemeToggle darkLabel={dict.common.dark} lightLabel={dict.common.light} />
-              <Link href={localizePath(locale, '/contact')} className="luxury-button flex-1 bg-gold text-bg hover:shadow-gold">
+              <Link href={anchorPath(locale, '#contact')} className="luxury-button flex-1 bg-gold text-bg hover:shadow-gold">
                 {dict.nav.cta}
               </Link>
             </div>

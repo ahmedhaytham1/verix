@@ -59,7 +59,6 @@ export function ProjectFilter({ dict, projects }: { dict: Dictionary; projects: 
                       {categoryLabel}
                     </div>
                     <h3 className="text-2xl font-semibold leading-tight text-white">{project.title}</h3>
-                    {project.owner && <p className="mt-2 text-sm text-white/75">{isArabic ? 'المالك' : dict.nav.home === 'Accueil' ? 'Maître d’ouvrage' : 'Owner'}: {project.owner}</p>}
                   </div>
                 </div>
 
@@ -124,11 +123,6 @@ function ProjectModal({ project, dict, onClose }: { project: Project; dict: Dict
           </div>
 
           <div className="border-t border-white/10 p-5 md:p-7 lg:border-s lg:border-t-0">
-            {project.owner && (
-              <div className="mb-6 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-white/75">
-                <span className="text-gold">{isArabic ? 'المالك' : isFrench ? 'Maître d’ouvrage' : 'Owner'}:</span> {project.owner}
-              </div>
-            )}
             <p className="text-base leading-8 text-white/80 md:text-lg md:leading-9">{project.description}</p>
             <div className="mt-8 rounded-[1.5rem] border border-gold/15 bg-gold/10 p-5 text-sm leading-7 text-white/80">
               {isArabic

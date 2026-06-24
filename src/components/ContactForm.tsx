@@ -92,7 +92,7 @@ export function ContactForm({ locale, dict }: ContactFormProps) {
       `*${labels.source}:* ${labels.website}`
     ].join('\n');
 
-    const url = `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`;
+    const url = `https://wa.me/00966564014047?text=${encodeURIComponent(whatsappMessage)}`;
     window.location.href = url;
   }
 
