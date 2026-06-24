@@ -67,7 +67,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
             <div className="reveal luxury-card rounded-[2.25rem] p-8 md:p-10">
               <p className="text-sm font-bold uppercase tracking-luxe text-gold">{dict.nav.contact}</p>
               <div className="mt-8 grid gap-5">
-                <InfoLink href={`tel:${company.phone.replace(/\s+/g, '')}`} icon={<Phone className="h-5 w-5" />} title={dict.contactPage.phone} value={`${company.phone} / ${company.secondaryPhone}`} dir="ltr" />
+                <InfoPhones icon={<Phone className="h-5 w-5" />} title={dict.contactPage.phone} phone={company.phone} secondaryPhone={company.secondaryPhone} />
                 <InfoLink href={`mailto:${company.email}`} icon={<Mail className="h-5 w-5" />} title={params.locale === 'ar' ? 'البريد الإلكتروني' : params.locale === 'fr' ? 'E-mail' : 'Email'} value={company.email} dir="ltr" />
                 <InfoLink href={mapUrl} icon={<MapPin className="h-5 w-5" />} title={params.locale === 'ar' ? 'العنوان' : params.locale === 'fr' ? 'Adresse' : 'Address'} value={company.address[params.locale]} />
                 <InfoStatic icon={<Clock className="h-5 w-5" />} title={params.locale === 'ar' ? 'ساعات العمل' : params.locale === 'fr' ? 'Horaires' : 'Working Hours'} value={company.hours[params.locale]} />
@@ -78,6 +78,24 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
         </div>
       </section>
     </>
+  );
+}
+
+
+function InfoPhones({ icon, title, phone, secondaryPhone }: { icon: ReactNode; title: string; phone: string; secondaryPhone: string }) {
+  const clean = (value: string) => value.replace(/\s+/g, '');
+  return (
+    <div className="group flex gap-4 rounded-3xl border border-line/15 bg-text/5 p-5 transition hover:border-gold/40 hover:bg-gold/10">
+      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-gold/15 text-gold transition group-hover:bg-gold group-hover:text-bg">{icon}</span>
+      <div>
+        <p className="font-semibold text-text">{title}</p>
+        <div dir="ltr" className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-left font-medium leading-7 tracking-wide text-muted/80">
+          <a href={`tel:${clean(phone)}`} className="transition hover:text-gold"><bdi>{phone}</bdi></a>
+          <span aria-hidden="true">/</span>
+          <a href={`tel:${clean(secondaryPhone)}`} className="transition hover:text-gold"><bdi>{secondaryPhone}</bdi></a>
+        </div>
+      </div>
+    </div>
   );
 }
 

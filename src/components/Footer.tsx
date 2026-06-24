@@ -39,7 +39,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         <div>
           <p className="text-sm font-semibold uppercase tracking-luxe text-gold">{dict.nav.contact}</p>
           <div className="mt-5 grid gap-4 text-muted/80">
-            <a href={`tel:${company.phone.replace(/\s+/g, '')}`} className="flex items-center gap-3 transition hover:text-gold"><Phone className="h-4 w-4 text-gold" /> <bdi dir="ltr" className="font-medium tracking-wide">{company.phone}</bdi></a>
+            <div className="flex items-start gap-3"><Phone className="mt-1 h-4 w-4 shrink-0 text-gold" /> <span dir="ltr" className="flex flex-wrap gap-x-2 text-left font-medium tracking-wide"><a href={`tel:${company.phone.replace(/\s+/g, '')}`} className="transition hover:text-gold"><bdi>{company.phone}</bdi></a><span aria-hidden="true">/</span><a href={`tel:${company.secondaryPhone.replace(/\s+/g, '')}`} className="transition hover:text-gold"><bdi>{company.secondaryPhone}</bdi></a></span></div>
             <a href={`mailto:${company.email}`} className="flex items-center gap-3 transition hover:text-gold"><Mail className="h-4 w-4 text-gold" /> <bdi dir="ltr">{company.email}</bdi></a>
             <a href={mapUrl} target="_blank" rel="noreferrer" className="flex items-center gap-3 transition hover:text-gold"><MapPin className="h-4 w-4 text-gold" /> {company.address[locale]}</a>
           </div>

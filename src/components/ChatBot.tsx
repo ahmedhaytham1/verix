@@ -1,9 +1,10 @@
 'use client';
 
-import { MessageCircle, Send, X } from 'lucide-react';
+import { Send, X } from 'lucide-react';
 import { FormEvent, useMemo, useState } from 'react';
 import { company, type Dictionary } from '@/data/content';
 import type { Locale } from '@/lib/i18n';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 type Message = { role: 'bot' | 'user'; text: string };
 
@@ -13,12 +14,12 @@ function makeAnswer(locale: Locale, dict: Dictionary, question: string) {
   const branches = company.branches[locale].join(locale === 'ar' ? '، ' : ', ');
 
   if (/service|خدم|خدمات|services|خدمة|service|services|prestations/.test(q)) {
-    if (locale === 'ar') return `تقدم Verix خدمات مثل: ${serviceText}. ويمكن استعراض جميع الخدمات من صفحة الخدمات.`;
-    if (locale === 'fr') return `Verix propose notamment : ${serviceText}. Tous les services sont disponibles dans la page Services.`;
-    return `Verix provides services such as: ${serviceText}. You can review all services on the Services page.`;
+    if (locale === 'ar') return `تقدم Verix خدمات مثل: ${serviceText}. ويمكن استعراض جميع الخدمات من قسم الخدمات.`;
+    if (locale === 'fr') return `Verix propose notamment : ${serviceText}. Tous les services sont disponibles dans la section Services.`;
+    return `Verix provides services such as: ${serviceText}. You can review all services in the Services section.`;
   }
   if (/project|مشروع|مشاريع|portfolio|projet/.test(q)) {
-    if (locale === 'ar') return 'تشمل محفظة Verix مشاريع فندقية وسكنية وتجارية وبنية تحتية ومحطات وقود، مع عرض صور كل مشروع بشكل منفصل وواضح داخل صفحة المشاريع.';
+    if (locale === 'ar') return 'تشمل محفظة Verix مشاريع فندقية وسكنية وتجارية وبنية تحتية ومحطات وقود، مع عرض صور كل مشروع بشكل منفصل وواضح داخل قسم المشاريع.';
     if (locale === 'fr') return 'Le portefeuille Verix comprend des projets hôteliers, résidentiels, commerciaux, d’infrastructure et des stations-service, avec des visuels clairs et séparés pour chaque projet.';
     return 'The Verix portfolio includes hospitality, residential, commercial, infrastructure and fuel-station projects, with each project presented through clear separated visuals.';
   }
@@ -64,7 +65,7 @@ export function ChatBot({ locale, dict }: { locale: Locale; dict: Dictionary }) 
         <div className="mb-4 w-[min(360px,calc(100vw-40px))] overflow-hidden rounded-[2rem] border border-line/15 bg-bg/95 shadow-luxury backdrop-blur-xl">
           <div className="flex items-center justify-between border-b border-line/15 p-4">
             <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-[#25D366] text-white"><MessageCircle className="h-5 w-5" /></span>
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-[#25D366] text-white"><WhatsAppIcon className="h-5 w-5" /></span>
               <div>
                 <p className="font-semibold text-text">{dict.common.chatbot}</p>
                 <p className="text-xs text-muted/80">{dict.common.ask}</p>
@@ -93,7 +94,7 @@ export function ChatBot({ locale, dict }: { locale: Locale; dict: Dictionary }) 
         </div>
       )}
       <button type="button" onClick={() => setOpen((value) => !value)} className="grid h-14 w-14 place-items-center rounded-full border border-[#25D366]/35 bg-[#25D366] text-white shadow-[0_18px_50px_rgba(37,211,102,.25)] backdrop-blur-xl transition hover:-translate-y-1 hover:scale-105" aria-label={dict.common.chatbot}>
-        <MessageCircle className="h-6 w-6" />
+        <WhatsAppIcon className="h-6 w-6" />
       </button>
     </div>
   );
