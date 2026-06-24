@@ -24,7 +24,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
         <ServicesGrid dict={dict} heading />
       </section>
 
-      <section id="projects" className="relative scroll-mt-28 overflow-hidden pb-28 pt-24">
+      <section id="projects" className="relative scroll-mt-28 overflow-hidden pb-20 pt-16">
         <EngineeringField />
         <div className="container-luxury relative z-10">
           <SectionHeading eyebrow={dict.projectsPage.eyebrow} title={dict.projectsPage.title} lead={dict.projectsPage.lead} center />
