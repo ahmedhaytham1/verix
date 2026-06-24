@@ -89,7 +89,7 @@ const ar = {
     trust: ['مخرجات واضحة قابلة للاعتماد', 'دقة فنية في كل مرحلة', 'حلول عملية قابلة للتنفيذ'],
     metrics: [
       { value: 13, suffix: '+', label: 'خدمة هندسية متخصصة' },
-      { value: 17, suffix: '', label: 'مشروع موثق' },
+      { value: 19, suffix: '', label: 'مشروع موثق' },
       { value: 5, suffix: '', label: 'دول ضمن نطاق الحضور' },
       { value: 2026, suffix: '', label: 'تحديث محفظة الأعمال' }
     ],
@@ -191,7 +191,7 @@ const en = {
     trust: ['Clear outputs ready for approval', 'Technical precision at every stage', 'Practical solutions ready for execution'],
     metrics: [
       { value: 13, suffix: '+', label: 'Specialized engineering services' },
-      { value: 17, suffix: '', label: 'Documented projects' },
+      { value: 19, suffix: '', label: 'Documented projects' },
       { value: 5, suffix: '', label: 'Countries of presence' },
       { value: 2026, suffix: '', label: 'Portfolio update' }
     ],
@@ -280,7 +280,7 @@ const fr = {
     trust: ['Livrables clairs prêts à l’approbation', 'Précision technique à chaque étape', 'Solutions pratiques prêtes à l’exécution'],
     metrics: [
       { value: 13, suffix: '+', label: 'Services d’ingénierie spécialisés' },
-      { value: 17, suffix: '', label: 'Projets documentés' },
+      { value: 19, suffix: '', label: 'Projets documentés' },
       { value: 5, suffix: '', label: 'Pays de présence' },
       { value: 2026, suffix: '', label: 'Mise à jour du portefeuille' }
     ],
@@ -355,7 +355,9 @@ const fr = {
 };
 
 const baseProjects: BaseProject[] = [
-  { id: 'samarn-waqf-hotel', category: 'hotels', image: '/images/project-gallery/project-01-01.webp', images: ['/images/project-gallery/project-01-01.webp', '/images/project-gallery/project-01-02.webp', '/images/project-gallery/project-01-03.webp', '/images/project-gallery/project-01-04.webp', '/images/project-gallery/project-02-01.webp', '/images/project-gallery/project-02-02.webp', '/images/project-gallery/project-02-03.webp', '/images/project-gallery/project-02-04.webp', '/images/project-gallery/project-02-05.webp', '/images/project-gallery/project-03-01.webp', '/images/project-gallery/project-03-02.webp'], ar: 'SAMARN WAQF HOTEL (مبنى تجاري سكني - وقف سمارن)', en: 'SAMARN WAQF HOTEL (Commercial Residential Building - Waqf Samarn)', fr: 'SAMARN WAQF HOTEL (bâtiment commercial et résidentiel - Waqf Samarn)' },
+  { id: 'hotel-waqf-samarn-commercial-residential', category: 'hotels', image: '/images/project-gallery/project-01-01.webp', images: ['/images/project-gallery/project-01-01.webp', '/images/project-gallery/project-01-02.webp', '/images/project-gallery/project-01-03.webp', '/images/project-gallery/project-01-04.webp'], ar: 'HOTEL WAQF SAMARN (مبنى تجاري سكني)', en: 'HOTEL WAQF SAMARN (Commercial Residential Building)', fr: 'HOTEL WAQF SAMARN (bâtiment commercial et résidentiel)' },
+  { id: 'al-rajhi-hotel', category: 'hotels', image: '/images/project-gallery/project-02-01.webp', images: ['/images/project-gallery/project-02-01.webp', '/images/project-gallery/project-02-02.webp', '/images/project-gallery/project-02-03.webp', '/images/project-gallery/project-02-04.webp', '/images/project-gallery/project-02-05.webp'], ar: 'AL RAJHI HOTEL (فندق الراجحي)', en: 'AL RAJHI HOTEL', fr: 'AL RAJHI HOTEL' },
+  { id: 'smarn-waqf', category: 'mixed', image: '/images/project-gallery/project-03-01.webp', images: ['/images/project-gallery/project-03-01.webp', '/images/project-gallery/project-03-02.webp'], ar: 'SMARN WAQF (مشروع وقف سمارن)', en: 'SMARN WAQF', fr: 'SMARN WAQF' },
   { id: 'al-nimri-waqf', category: 'mixed', image: '/images/project-gallery/project-04-01.webp', images: ['/images/project-gallery/project-04-01.webp', '/images/project-gallery/project-04-02.webp', '/images/project-gallery/project-04-03.webp', '/images/project-gallery/project-04-04.webp'], ar: 'AL-NIMRI WAQF (وقف النمري)', en: 'AL-NIMRI WAQF', fr: 'AL-NIMRI WAQF' },
   { id: 'sabbagh-abdelghani-mahmoud', category: 'mixed', image: '/images/project-gallery/project-05-01.webp', images: ['/images/project-gallery/project-05-01.webp', '/images/project-gallery/project-05-02.webp', '/images/project-gallery/project-05-03.webp', '/images/project-gallery/project-05-04.webp', '/images/project-gallery/project-05-05.webp'], ar: 'SABBAGH ABDELGHANI MAHMOUD (ورثة محمود عبدالغني صباغ)', en: 'SABBAGH ABDELGHANI MAHMOUD', fr: 'SABBAGH ABDELGHANI MAHMOUD' },
   { id: 'alrowada', category: 'residential', image: '/images/project-gallery/project-06-01.webp', images: ['/images/project-gallery/project-06-01.webp', '/images/project-gallery/project-06-02.webp', '/images/project-gallery/project-06-03.webp', '/images/project-gallery/project-06-04.webp'], ar: 'ALROWADA (الروضة)', en: 'ALROWADA', fr: 'ALROWADA' },
@@ -369,7 +371,7 @@ const baseProjects: BaseProject[] = [
   { id: 'patrol-station-hassan-mutahar', category: 'fuel', image: '/images/project-gallery/project-14-01.webp', images: ['/images/project-gallery/project-14-01.webp', '/images/project-gallery/project-14-02.webp', '/images/project-gallery/project-14-03.webp', '/images/project-gallery/project-14-04.webp', '/images/project-gallery/project-15-01.webp', '/images/project-gallery/project-15-02.webp', '/images/project-gallery/project-15-03.webp', '/images/project-gallery/project-15-04.webp'], ar: 'PATROL STATION - المالك: ورثة حسن مطهر (مشروع درايف ثرو)', en: 'PATROL STATION - Owner: Heirs of Hassan Mutahar (Drive-Thru Project)', fr: 'PATROL STATION - propriétaire : héritiers de Hassan Mutahar (Projet Drive-Thru)' },
   { id: 'patrol-station-saleh-alghamdi', category: 'fuel', image: '/images/project-gallery/project-16-01.webp', images: ['/images/project-gallery/project-16-01.webp', '/images/project-gallery/project-16-02.webp', '/images/project-gallery/project-16-03.webp', '/images/project-gallery/project-16-04.webp'], ar: 'PATROL STATION - المالك: الشيخ صالح الغامدي', en: 'PATROL STATION - Owner: Sheikh Saleh Al-Ghamdi', fr: 'PATROL STATION - propriétaire : Sheikh Saleh Al-Ghamdi' },
   { id: 'patrol-station-qurashi', category: 'fuel', image: '/images/project-gallery/project-17-01.webp', images: ['/images/project-gallery/project-17-01.webp', '/images/project-gallery/project-17-02.webp', '/images/project-gallery/project-17-03.webp', '/images/project-gallery/project-17-04.webp'], ar: 'PATROL STATION - المالك: عابد عبدربه هاشم القرشي', en: 'PATROL STATION - Owner: Abed Abdulraboh Hashem Al-Qurashi', fr: 'PATROL STATION - propriétaire : Abed Abdulraboh Hashem Al-Qurashi' },
-  { id: 'patrol-station-mutairfi', category: 'fuel', image: '/images/project-gallery/project-18-01.webp', images: ['/images/project-gallery/project-18-01.webp', '/images/project-gallery/project-18-02.webp', '/images/project-gallery/project-18-03.webp', '/images/project-gallery/project-18-04.webp'], ar: 'PATROL STATION - المالك: سلمان بن عليان المطرفي', en: 'PATROL STATION - Salman bin Alyan Al-Mutairfi', fr: 'PATROL STATION - Salman bin Alyan Al-Mutairfi' },
+  { id: 'patrol-station-mutairfi', category: 'fuel', image: '/images/project-gallery/project-18-01.webp', images: ['/images/project-gallery/project-18-01.webp', '/images/project-gallery/project-18-02.webp', '/images/project-gallery/project-18-03.webp', '/images/project-gallery/project-18-04.webp'], ar: 'PATROL STATION - المالك: سلمان بن عليان المطرفي', en: 'PATROL STATION - Owner: Salman bin Alyan Al-Mutairfi', fr: 'PATROL STATION - propriétaire : Salman bin Alyan Al-Mutairfi' },
   { id: 'fifth-settlement', category: 'commercial', image: '/images/project-gallery/project-19-01.webp', images: ['/images/project-gallery/project-19-01.webp', '/images/project-gallery/project-19-02.webp', '/images/project-gallery/project-19-03.webp', '/images/project-gallery/project-19-04.webp'], ar: 'Commercial Complex, Fifth Settlement (التجمع الخامس)', en: 'Commercial Complex, Fifth Settlement', fr: 'Commercial Complex, Fifth Settlement' },
   { id: 'new-administrative-capital', category: 'residential', image: '/images/project-gallery/project-20-01.webp', images: ['/images/project-gallery/project-20-01.webp', '/images/project-gallery/project-20-02.webp', '/images/project-gallery/project-20-03.webp', '/images/project-gallery/project-20-04.webp', '/images/project-gallery/project-21-01.webp', '/images/project-gallery/project-21-02.webp', '/images/project-gallery/project-21-03.webp', '/images/project-gallery/project-21-04.webp', '/images/project-gallery/project-22-01.webp', '/images/project-gallery/project-22-02.webp', '/images/project-gallery/project-22-03.webp', '/images/project-gallery/project-22-04.webp'], ar: 'Residential in the New Administrative Capital (العاصمة الإدارية)', en: 'Residential in the New Administrative Capital', fr: 'Residential in the New Administrative Capital' },
 ];
@@ -377,60 +379,70 @@ const baseProjects: BaseProject[] = [
 
 function projectDescription(locale: Locale, project: BaseProject) {
   const descriptions: Record<string, Record<Locale, string>> = {
-    'samarn-waqf-hotel': {
-      ar: 'مشروع فندقي وتجاري سكني ضمن وقف سمارن، يضم مجموعة صور متعددة توضح نطاق العمل وتنوع المعالجات التصميمية والهندسية للمشروع.',
-      en: 'A hotel, commercial and residential project under Waqf Samarn, presented through multiple visuals that show the project scope and engineering treatment.',
-      fr: 'Un projet hôtelier, commercial et résidentiel relevant de Waqf Samarn, présenté à travers plusieurs visuels montrant l’étendue du projet.'
+    'hotel-waqf-samarn-commercial-residential': {
+      ar: 'مشروع فندقي تجاري سكني يتطلب تنسيقاً دقيقاً بين الاستخدامات المختلفة، ووضوحاً في المخططات، وتكاملاً في متطلبات التشغيل والاعتماد.',
+      en: 'A commercial residential hotel project requiring precise coordination between different uses, clear drawings and integrated approval requirements.',
+      fr: 'Un projet hôtelier commercial et résidentiel nécessitant une coordination précise entre les usages, les plans et les exigences d’approbation.'
+    },
+    'al-rajhi-hotel': {
+      ar: 'مشروع فندقي يبرز أهمية وضوح المخططات وتكامل الأعمال الهندسية لضمان تجربة تشغيلية منظمة وجودة تنفيذ قابلة للاعتماد.',
+      en: 'A hotel project highlighting the importance of clear drawings and integrated engineering coordination to support organized operation and reliable delivery.',
+      fr: 'Un projet hôtelier qui souligne l’importance de plans clairs et d’une coordination d’ingénierie intégrée.'
+    },
+    'smarn-waqf': {
+      ar: 'مشروع وقف سمارن يتطلب حلولاً هندسية عملية تراعي طبيعة الاستخدام، وكفاءة المساحات، ووضوح المتطلبات الفنية قبل مراحل التنفيذ.',
+      en: 'The Smarn Waqf project requires practical engineering solutions that consider use requirements, space efficiency and clear technical outputs before execution.',
+      fr: 'Le projet SMARN WAQF nécessite des solutions d’ingénierie pratiques adaptées aux usages, à l’efficacité des espaces et aux livrables techniques.'
     },
     'al-nimri-waqf': {
-      ar: 'مشروع وقفي يتطلب تنسيقاً هندسياً واضحاً بين المتطلبات التصميمية والتنفيذية لضمان جودة المخرجات واعتمادها.',
-      en: 'A waqf project requiring clear engineering coordination between design and execution requirements to support reliable deliverables.',
-      fr: 'Un projet de waqf nécessitant une coordination claire entre les exigences de conception et d’exécution.'
+      ar: 'مشروع وقفي متعدد المتطلبات يعكس خبرة Verix في تنظيم المدخلات الفنية وتحويلها إلى مخططات ومخرجات قابلة للاعتماد.',
+      en: 'A waqf project with multiple requirements, reflecting Verix’s ability to turn technical inputs into clear approval-ready deliverables.',
+      fr: 'Un projet de waqf aux exigences multiples, illustrant la capacité de Verix à structurer des livrables clairs et validables.'
     },
     'sabbagh-abdelghani-mahmoud': {
-      ar: 'مشروع خاص لورثة محمود عبدالغني صباغ، يركز على وضوح المخططات وجودة الحلول الهندسية قبل مراحل التنفيذ.',
-      en: 'A private project for the heirs of Mahmoud Abdulghani Sabbagh, focused on drawing clarity and engineering quality before execution.',
-      fr: 'Un projet privé pour les héritiers de Mahmoud Abdulghani Sabbagh, axé sur la clarté des plans et la qualité des solutions techniques.'
+      ar: 'مشروع يتطلب معالجة هندسية متوازنة بين المتطلبات التصميمية، والجدوى الفنية، وجودة المخرجات النهائية.',
+      en: 'A project requiring balanced engineering treatment across design requirements, technical feasibility and final deliverable quality.',
+      fr: 'Un projet nécessitant un équilibre entre exigences de conception, faisabilité technique et qualité des livrables.'
     },
-    'alrowada': {
-      ar: 'مشروع الروضة يعكس أهمية التخطيط المنظم وجودة المخرجات الهندسية بما يدعم مراحل الاعتماد والتنفيذ.',
-      en: 'Alrowada reflects the value of organized planning and engineering deliverable quality to support approval and execution stages.',
-      fr: 'Alrowada reflète l’importance d’une planification organisée et de livrables techniques de qualité.'
+    alrowada: {
+      ar: 'مشروع سكني يركز على كفاءة التخطيط، وجودة المخططات، وتقديم حلول واضحة تساعد على تنفيذ مراحل العمل بثقة.',
+      en: 'A residential project focused on planning efficiency, drawing quality and clear solutions that support confident execution.',
+      fr: 'Un projet résidentiel axé sur l’efficacité de la planification, la qualité des plans et une exécution maîtrisée.'
     },
     desalination: {
-      ar: 'مشروع محطة تحلية مياه البحر (مع المؤسسة العامة لتحلية المياه المالحة)، ويتطلب دراسة فنية دقيقة وتنسيقاً هندسياً متكاملاً.',
-      en: 'A seawater desalination station project with the Saline Water Conversion Corporation, requiring precise technical study and integrated engineering coordination.',
-      fr: 'Un projet de station de dessalement d’eau de mer nécessitant une étude technique précise et une coordination intégrée.'
+      ar: 'مشروع بنية تحتية لمحطة تحلية مياه البحر يتطلب دراسة فنية دقيقة وتنسيقاً هندسياً مع طبيعة المنشأة ومتطلبات الجهات المختصة.',
+      en: 'An infrastructure project for a seawater desalination station, requiring precise technical study and engineering coordination.',
+      fr: 'Un projet d’infrastructure pour une station de dessalement nécessitant une étude technique précise.'
     },
     'mall-al-shalawi': {
-      ar: 'مشروع مول الشلاوي يركز على تنظيم المساحات، وضوح الحركة، وتقديم حلول هندسية مناسبة لطبيعة الاستخدام التجاري.',
-      en: 'Mall Al-Shalawi focuses on space organization, circulation clarity and engineering solutions suited to commercial use.',
-      fr: 'Mall Al-Shalawi met l’accent sur l’organisation des espaces, la clarté des circulations et les solutions adaptées à l’usage commercial.'
+      ar: 'مشروع تجاري يتطلب وضوحاً في الحركة الداخلية والخارجية، وتنظيماً للمساحات، وتنسيقاً فنياً يخدم تجربة الزوار وكفاءة التشغيل.',
+      en: 'A commercial project requiring clear internal and external movement, efficient space organization and technical coordination.',
+      fr: 'Un projet commercial nécessitant une circulation claire, une organisation efficace des espaces et une coordination technique.'
     },
     'residence-dam': {
-      ar: 'مجمع دام ريزيدنس السكني يعكس تكامل التخطيط السكني مع جودة المخططات والمتطلبات الفنية للمشروع.',
-      en: 'Residence Dam reflects the integration of residential planning with drawing quality and technical project requirements.',
-      fr: 'Residence Dam reflète l’intégration de la planification résidentielle avec la qualité des plans et les exigences techniques.'
+      ar: 'مجمع سكني يعكس أهمية التكامل بين التخطيط المعماري، والمخططات التنفيذية، ومتطلبات الجودة لتحقيق بيئة سكنية منظمة.',
+      en: 'A residential complex reflecting the need for integrated architectural planning, execution drawings and quality requirements.',
+      fr: 'Un complexe résidentiel illustrant l’intégration de la planification, des plans d’exécution et des exigences de qualité.'
     },
     'ower-omran-al-dam': {
-      ar: 'مشروع شركة أملاك دام العمران يتطلب تنسيقاً هندسياً واضحاً بين المتطلبات المعمارية والإنشائية والتشغيلية.',
-      en: 'Ower Omran Al Dam requires clear engineering coordination between architectural, structural and operational requirements.',
-      fr: 'Ower Omran Al Dam nécessite une coordination claire entre les exigences architecturales, structurelles et opérationnelles.'
+      ar: 'مشروع برج تجاري يتطلب تنسيقاً هندسياً دقيقاً بين المتطلبات المعمارية والإنشائية وأنظمة التشغيل والسلامة.',
+      en: 'A commercial tower project requiring precise coordination between architectural, structural, operational and safety requirements.',
+      fr: 'Un projet de tour commerciale nécessitant une coordination précise entre architecture, structure, exploitation et sécurité.'
     },
     'patrol-station-hassan-mutahar': {
-      ar: 'مشروع محطة وقود ودرايف ثرو يتطلب وضوح حركة المركبات، تنظيم منطقة الخدمة، والالتزام بمتطلبات السلامة والاعتماد.',
-      en: 'A fuel-station and drive-thru project requiring clear vehicle circulation, service-area organization and compliance with safety and approval requirements.',
-      fr: 'Un projet de station-service et Drive-Thru nécessitant une circulation claire, une zone de service organisée et le respect des exigences de sécurité.'
+      ar: 'مشروع محطة وقود ودرايف ثرو يتطلب وضوحاً في حركة المركبات، وتنظيم منطقة الخدمة، وتنسيق المتطلبات التشغيلية والسلامة.',
+      en: 'A fuel-station and drive-thru project requiring clear vehicle circulation, service-area organization and safety coordination.',
+      fr: 'Un projet de station-service et drive-thru nécessitant une circulation claire, une organisation de service et une coordination sécurité.'
     },
     'fifth-settlement': {
-      ar: 'مجمع تجاري في التجمع الخامس يركز على كفاءة التوزيع، وضوح المخططات، وتقديم تجربة تجارية منظمة.',
-      en: 'A commercial complex in the Fifth Settlement focused on efficient layout, clear drawings and an organized commercial experience.',
+      ar: 'مجمع تجاري في التجمع الخامس يركز على كفاءة التوزيع، ووضوح المخططات، وتقديم تجربة تجارية منظمة قابلة للتطوير.',
+      en: 'A commercial complex in the Fifth Settlement focused on efficient layout, clear drawings and a scalable commercial experience.',
       fr: 'Un complexe commercial au Fifth Settlement, axé sur l’efficacité de l’aménagement et la clarté des plans.'
     },
     'new-administrative-capital': {
-      ar: 'مشروع سكني في العاصمة الإدارية الجديدة، ويضم مجموعة صور متعددة توضح نماذج مختلفة من الأعمال السكنية الحديثة.',
-      en: 'A residential project in the New Administrative Capital, presented through multiple visuals showing modern residential works.',
-      fr: 'Un projet résidentiel dans la nouvelle capitale administrative, présenté à travers plusieurs visuels de travaux résidentiels modernes.'
+      ar: 'مشروع سكني في العاصمة الإدارية الجديدة يعكس خبرة في تنظيم المتطلبات التصميمية وتقديم مخرجات هندسية واضحة للمشروعات الحديثة.',
+      en: 'A residential project in the New Administrative Capital, reflecting experience in organizing design requirements and clear engineering outputs.',
+      fr: 'Un projet résidentiel dans la nouvelle capitale administrative, reflétant une expertise dans la structuration des exigences de conception.'
     }
   };
 
