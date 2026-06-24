@@ -1,6 +1,6 @@
 'use client';
 
-import { Bot, Send, X } from 'lucide-react';
+import { MessageCircle, Send, X } from 'lucide-react';
 import { FormEvent, useMemo, useState } from 'react';
 import { company, type Dictionary } from '@/data/content';
 import type { Locale } from '@/lib/i18n';
@@ -64,7 +64,7 @@ export function ChatBot({ locale, dict }: { locale: Locale; dict: Dictionary }) 
         <div className="mb-4 w-[min(360px,calc(100vw-40px))] overflow-hidden rounded-[2rem] border border-line/15 bg-bg/95 shadow-luxury backdrop-blur-xl">
           <div className="flex items-center justify-between border-b border-line/15 p-4">
             <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-gold text-bg"><Bot className="h-5 w-5" /></span>
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-[#25D366] text-white"><MessageCircle className="h-5 w-5" /></span>
               <div>
                 <p className="font-semibold text-text">{dict.common.chatbot}</p>
                 <p className="text-xs text-muted/80">{dict.common.ask}</p>
@@ -92,8 +92,8 @@ export function ChatBot({ locale, dict }: { locale: Locale; dict: Dictionary }) 
           </form>
         </div>
       )}
-      <button type="button" onClick={() => setOpen((value) => !value)} className="grid h-14 w-14 place-items-center rounded-full border border-gold/35 bg-bg/90 text-gold shadow-luxury backdrop-blur-xl transition hover:-translate-y-1 hover:bg-gold hover:text-bg" aria-label={dict.common.chatbot}>
-        <Bot className="h-6 w-6" />
+      <button type="button" onClick={() => setOpen((value) => !value)} className="grid h-14 w-14 place-items-center rounded-full border border-[#25D366]/35 bg-[#25D366] text-white shadow-[0_18px_50px_rgba(37,211,102,.25)] backdrop-blur-xl transition hover:-translate-y-1 hover:scale-105" aria-label={dict.common.chatbot}>
+        <MessageCircle className="h-6 w-6" />
       </button>
     </div>
   );
